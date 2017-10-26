@@ -1,0 +1,67 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 50px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 100px;
+  padding: 20px;
+  color: white;
+}
+.todo-header-content{
+  background-color: #222;
+  color: white;
+  padding: 10px;
+}
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.todo-wrapper{
+  width: 960px;  
+  margin: auto;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.App-footer {
+  background-color: #222;
+  height: 20px;
+  padding: 20px;
+  color: white;
+
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  width:100%;
+}
+.todo-footer{
+  background-color: #222;
+  color: white;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+/* IE 6 */
+* html #footer {
+  position:absolute;
+  top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+
+.App-footer a{
+  text-decoration: none;
+  margin-left: 2px;
+  color: #ffffff;
+}
