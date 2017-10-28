@@ -3,10 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 import ToDo from './ToDo/Todo';
+import ToDoForm from './ToDoForm/ToDoForm';
 
 class App extends Component {
   constructor(props){
     super(props);
+
+    this.addTodo = this.addTodo.bind(this);
 
     // m going to setup the React state of our component
     this.state = {
@@ -15,7 +18,22 @@ class App extends Component {
         { id: 2, todoContent: "Todo Content 2" },
       ],
     }
-}
+  }
+
+  addTodo(todo){
+    // push the todo on to todos array.
+    const previousTodos = this.state.todos;
+
+    previousTodos.push({
+      id: previousTodos.length+1, todoContent: todo
+    });
+    
+    this.setState({
+        todos: previousTodos
+    });
+
+    this.state.todos = previousTodos;
+  }
 
   render() {
     return (
@@ -44,7 +62,7 @@ class App extends Component {
 
           <div className="todo-footer">
             <div className="todo-footer-content">
-              ToDo List
+              <ToDoForm addTodo={this.addTodo} />
             </div>
           </div>
         </section>
